@@ -1,5 +1,6 @@
 {
-  "private": true,
+  "private": false,
+  "main": "dist/umi.js",
   "author": "heyaqing <1159056851@qq.com>",
   "scripts": {
     "dev": "umi dev",
