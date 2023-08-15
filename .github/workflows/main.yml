@@ -20,6 +20,7 @@ jobs:
       - name: Deploy # 将打包内容发布到 github page
         uses: JamesIves/github-pages-deploy-action@3.5.9 # 使用别人写好的 actions
         with:  # 自定义环境变量
+          ACCESS_TOKEN: ${{ secrets.TEST_A }}
           BRANCH: main
           FOLDER: dist
           REPOSITORY_NAME: heyaqing497/heyaqing497.github.io # 这是我的 github page 仓库
