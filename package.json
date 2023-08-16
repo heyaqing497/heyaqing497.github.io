@@ -1,6 +1,7 @@
 {
   "private": true,
   "author": "heyaqing <1159056851@qq.com>",
+  "homepage": "https://heyaqing497.github.io/github-actions-demo",
   "scripts": {
     "dev": "max dev",
     "build": "max build",
