@@ -32,5 +32,6 @@ export default defineConfig({
   ],
   npmClient: 'pnpm',
   publicPath: '/github-actions-demo/',
+  base: '/github-actions-demo/',
 });
 
