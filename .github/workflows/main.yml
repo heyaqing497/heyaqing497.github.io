@@ -1,26 +1,29 @@
-name: github pages
-
-on:
+name: Build and Deploy
+on: # 监听 master 分支上的 push 事件
   push:
     branches:
-      - main # default branch
+      - main
+permissions:
+  contents: write
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  build-and-deploy:
+    runs-on: ubuntu-latest # 构建环境使用 ubuntu
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3 
         with:
-          # 如果配置 themeConfig.lastUpdated 为 false，则不需要添加该参数以加快检出速度
-          fetch-depth: 0
-      - name: Install dependencies
-        run: npm install
-      - name: Build with dumi
-        # 文档编译命令，如果是 react 模板需要修改为 npm run docs:build
-        run: npm run build
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          # github_token: ${{ secrets.GITHUB_TOKEN }}
-          # 文档目录，如果是 react 模板需要修改为 docs-dist
-          publish_dir: ./docs-dist
+          persist-credentials: false
+
+      - name: Install and Build # 下载依赖 打包项目
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy # 将打包内容发布到 github page
+        uses: JamesIves/github-pages-deploy-action@v4 # 使用别人写好的 actions
+        with:  # 自定义环境变量
+          # ACCESS_TOKEN: ${{ secrets.TEST_A }}
+          branch: main
+          folder: dist
+          repository-name: heyaqing497/heyaqing497.github.io # 这是我的 github page 仓库
+          target-folder: github-actions-demo # 打包的文件将放到静态服务器 github-actions-demo 目录下
