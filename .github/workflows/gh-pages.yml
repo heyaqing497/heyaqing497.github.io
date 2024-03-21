@@ -1,20 +1,47 @@
-name: github pages
+# Install dependence and running `changesets publish`
+
+name: Publish heyaqing
 
 on:
+  workflow_dispatch:
   push:
     branches:
-      - main # default branch
+      - main
+    paths:
+      - 'packages/*/package.json'
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - '.github/workflows/gh-pages.yml'
 
 jobs:
-  deploy:
+  replace-package-json-and-publish:
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+      packages: write
+      pull-requests: write
+      issues: read
     steps:
-      - uses: actions/checkout@v2
-      - run: npm i pnpm -g
-      - run: pnpm i --no-frozen-lockfile
-      - run: npm run build
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      - uses: actions/checkout@v4
         with:
-          github_token: ${{ secrets.DEPLOY_KEY }}
-          publish_dir: ./dist
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org/
+      - name: install dependencies
+        run: |
+          npm i pnpm -g
+          pnpm i --no-frozen-lockfile
+      - name: build
+      - run: npm run build
+      - name: publish
+       id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: npm run pub:only
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
