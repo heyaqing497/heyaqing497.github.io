@@ -1,7 +1,10 @@
 {
   "name": "heyaqing",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
   "description": "個人博客",
   "homepage": "https://heyaqing497.github.io/github-actions-demo",
   "license": "MIT",
