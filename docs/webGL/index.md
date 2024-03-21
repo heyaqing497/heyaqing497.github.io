@@ -7,7 +7,7 @@ import { Foo } from 'heyaqing';
 import React, { useEffect, type FC, useRef } from 'react';
 
 export default () => {
-  const webglRef = useRef < HTMLCanvasElement > null;
+  const webglRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     const canvas = webglRef.current;
     // 2d/webgl
@@ -27,16 +27,6 @@ export default () => {
 
 ### 方法
 
-| 属性           | 说明                                    | 类型      | 默认值  | 版本 |
-| -------------- | --------------------------------------- | --------- | ------- | ---- |
-| getContext     | 返回 canvas 的上下文                    | `number`  | `100`   | `-`  |
-| realtimeBounds | 实时获取容器 bounds，`false` 以节约性能 | `boolean` | `false` | `-`  |
-| autoTrigger    | 监听点击事件并自动触发滚动              | `boolean` | `true`  | `-`  |
-| scrollableX    | 是否支持横向滚动                        | `boolean` | `true`  | `-`  |
-| scrollableY    | 是否支持纵向滚动                        | `boolean` | `true`  | `-`  |
-
-Here is an example of AppleScript:
-
-    tell application "Foo"
-        beep
-    end tell
+| 属性       | 说明                 | 类型        | 默认值 | 版本 |
+| ---------- | -------------------- | ----------- | ------ | ---- |
+| getContext | 返回 canvas 的上下文 | `() => any` | `100`  | `-`  |
