@@ -1,24 +1,10 @@
 import { defineConfig } from 'dumi';
 
-//github仓库名称
-const defaultPath = '/github-actions-demo';
-//打包后gh-pages默认会拼接仓库名称在路径上
-const baseUrl = defaultPath;
-
 export default defineConfig({
-  base: defaultPath,
-  publicPath: `${baseUrl}/`,
-  title: '标题',
-  outputPath: 'docs-dist',
+  title: 'Site Name',
   mode: 'site',
-  extraBabelPlugins: [
-    [
-      'babel-plugin-import',
-      {
-        libraryName: 'antd', //配置antd全局样式
-        libraryDirectory: 'es',
-        style: true,
-      },
-    ],
-  ],
+  base: '/docs-test',
+  publicPath: '/docs-test/',
+  exportStatic: {},
+  // more config: https://d.umijs.org/config
 });
