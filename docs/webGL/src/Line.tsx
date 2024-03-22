@@ -1,3 +1,6 @@
+/**
+ * title: 我是一條線
+ */
 import React, { useEffect, useRef, type FC } from 'react';
 
 const Foo: FC<{ title: string }> = () => {
@@ -15,7 +18,7 @@ const Foo: FC<{ title: string }> = () => {
       ctx.stroke(); // 进行线的着色，这时整条线才变得可见
     }
   }, []);
-  return <canvas ref={webglRef} width="500" height="500" />;
+  return <canvas ref={webglRef} width="100" height="100" />;
 };
 
 export default Foo;

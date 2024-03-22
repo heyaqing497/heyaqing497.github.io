@@ -128,20 +128,20 @@ fun (x: Int, y: Int): Int {
 
 ---
 
-    ``fun (x: Int, y: Int): Int {
-      return x + y
-    }``
+        ``fun (x: Int, y: Int): Int {
+          return x + y
+        }``
 
-    ```python
-    def hello_world():
-        print("Hello, World!")
-    ```
+        ```python
+        def hello_world():
+            print("Hello, World!")
+        ```
 
-    ```javascript
-    fun (x: Int, y: Int): Int {
-      return x + y
-    }
-    ```
+        ```javascript
+        fun (x: Int, y: Int): Int {
+          return x + y
+        }
+        ```
 
         fun (x: Int, y: Int): Int {
           return x + y

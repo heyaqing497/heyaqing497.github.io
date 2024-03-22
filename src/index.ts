@@ -1,3 +1,3 @@
-import './global.less';
+// import './global.less';
 
-export { default as Foo } from './Foo';
+// export { default as Line } from './components/Line';
