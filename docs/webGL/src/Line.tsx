@@ -3,7 +3,7 @@
  */
 import React, { useEffect, useRef, type FC } from 'react';
 
-const Foo: FC<{ title: string }> = () => {
+const Line: FC<{ title: string }> = () => {
   const webglRef = useRef<HTMLCanvasElement>(null);
   useEffect(() => {
     const canvas = webglRef.current;
@@ -21,4 +21,4 @@ const Foo: FC<{ title: string }> = () => {
   return <canvas ref={webglRef} width="100" height="100" />;
 };
 
-export default Foo;
+export default Line;

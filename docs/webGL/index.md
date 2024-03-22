@@ -9,6 +9,7 @@ This is an example WebGL.
 
 <code src="./src/Line.tsx"></code>
 <code src="./src/Square.tsx"></code>
+<code src="./src/Bezier.tsx"></code>
 
 ### 方法
 
