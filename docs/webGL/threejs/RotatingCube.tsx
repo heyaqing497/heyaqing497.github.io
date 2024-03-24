@@ -76,7 +76,10 @@ const Line: FC<{ title: string }> = () => {
       cube = new THREE.Mesh(geometry, material);
       // 最后将创建好的几何立方体添加到场景中
       scene.add(cube);
+    }
 
+    // initLight 创建两个光源
+    function initLight() {
       // 点光源-具备立体感
       const point = new THREE.PointLight(0xff0000);
       point.position.set(1, 1, -1); // 点光源位置
@@ -85,6 +88,7 @@ const Line: FC<{ title: string }> = () => {
       scene.add(point); // 点光源添加到场景中
       scene.add(point2); // 点光源添加到场景中
     }
+
     // render 函数提供了浏览器的循环渲染功能
     function render() {
       cube.rotation.x += 0.01;
@@ -98,6 +102,7 @@ const Line: FC<{ title: string }> = () => {
       initCamera();
       initScene();
       initObject();
+      initLight();
       render();
     }
     threeStart();
