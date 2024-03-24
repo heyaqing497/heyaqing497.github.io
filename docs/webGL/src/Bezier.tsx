@@ -152,7 +152,7 @@ const Bezier: FC<{ title: string }> = () => {
       gl.drawArrays(gl.LINE_STRIP, 0, bezierPoint.length / 3);
     }
   }, []);
-  return <canvas ref={webglRef} width="200" height="200" />;
+  return <canvas ref={webglRef} width="300" height="200" />;
 };
 
 export default Bezier;
