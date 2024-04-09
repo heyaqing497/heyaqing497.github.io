@@ -62,11 +62,12 @@
     "moment": "^2.29.4",
     "prefix-classnames": "^0.0.7",
     "prettier": "^3.1.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": ">=16.9.0",
+    "react-dom": ">=16.9.0",
     "three": "^0.162.0",
     "ts-jest": "^29.1.1",
     "tslib": "^2.6.2",
+    "twgl.js": "^5.5.4",
     "typescript": "^5.3.3"
   },
   "devDependencies": {

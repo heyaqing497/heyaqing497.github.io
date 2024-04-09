@@ -17,6 +17,7 @@ This is an example WebGL.
 <code src="./src/Square.tsx"></code>
 <code src="./src/Bezier.tsx"></code>
 <code src="./src/Cube.tsx"></code>
+<code src="./src/Triangles.tsx"></code>
 
 [球的参考网址](https://blog.csdn.net/baidu_38766085/article/details/79881978)
 <code src="./src/Ball.tsx"></code>
