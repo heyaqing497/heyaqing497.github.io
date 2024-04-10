@@ -26,6 +26,8 @@ This is an example WebGL.
 <code src="./twgl/TwglCube.tsx"></code>
 Textures
 <code src="./twgl/Textures.tsx"></code>
+Primitives
+<code src="./twgl/Primitives.tsx"></code>
 TwoDLines
 <code src="./twgl/TwoDLines.tsx"></code>
 
