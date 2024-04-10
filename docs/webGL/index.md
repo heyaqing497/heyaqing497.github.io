@@ -31,6 +31,9 @@ Primitives
 TwoDLines
 <code src="./twgl/TwoDLines.tsx"></code>
 
+DynamicBuffers
+<code src="./twgl/DynamicBuffers.tsx"></code>
+
 threejs
 <code src="./threejs/RotatingCube.tsx"></code>
 

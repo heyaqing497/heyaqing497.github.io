@@ -3033,6 +3033,11 @@
   "resolved" "https://registry.npmmirror.com/atomic-sleep/-/atomic-sleep-1.0.0.tgz"
   "version" "1.0.0"
 
+"audiostreamsource.js@^0.1.2":
+  "integrity" "sha512-jLQX/XHsXri//sKbdQ7XCgY4SDsMLtEPYUNEftBu5xDicVw0+dBNAlzZKq8YzsnajBXd6VzGRZcWx1sPuZ9abw=="
+  "resolved" "https://registry.npmmirror.com/audiostreamsource.js/-/audiostreamsource.js-0.1.2.tgz"
+  "version" "0.1.2"
+
 "autoprefixer@^10.4.6":
   "integrity" "sha512-1DKbDfsr6KUElM6wg+0zRNkB/Q7WcKYAaK+pzXn+Xqmszm/5Xa9coeNdtP88Vi+dPzZnMjhge8GIV49ZQkDa+g=="
   "resolved" "https://registry.npmmirror.com/autoprefixer/-/autoprefixer-10.4.18.tgz"
@@ -3645,6 +3650,11 @@
   "integrity" "sha512-jJ0bqzaylmJtVnNgzTeSOs8DPavpbYgEr/b0YL8/2GO3xJEhInFmhKMUnEJQjZumK7KXGFhUy89PrsJWlakBVg=="
   "resolved" "https://registry.npmmirror.com/chownr/-/chownr-1.1.4.tgz"
   "version" "1.1.4"
+
+"chroma-js@^2.4.2":
+  "integrity" "sha512-U9eDw6+wt7V8z5NncY2jJfZa+hUH8XEj8FQHgFJTrUFnJfXYf4Ml4adI2vXZOjqRDpFWtYVWypDfZwnJ+HIR4A=="
+  "resolved" "https://registry.npmmirror.com/chroma-js/-/chroma-js-2.4.2.tgz"
+  "version" "2.4.2"
 
 "chrome-trace-event@^1.0.2":
   "integrity" "sha512-p3KULyQg4S7NIHixdwbGX+nFHkoBiA4YQmyWtjb8XngSKV124nJmRysgAeujbUVb15vh+RvFUfCPqU7rXk+hZg=="
@@ -10997,7 +11007,7 @@
     "copy-to-clipboard" "^3.3.1"
     "prop-types" "^15.8.1"
 
-"react-dom@*", "react-dom@^16.6.0 || ^17.0.0 || ^18.0.0", "react-dom@^18.2.0", "react-dom@>= 16.8.0", "react-dom@>=16.0.0", "react-dom@>=16.11.0", "react-dom@>=16.8", "react-dom@>=16.8.0", "react-dom@>=16.9.0":
+"react-dom@*", "react-dom@^16.6.0 || ^17.0.0 || ^18.0.0", "react-dom@>= 16.8.0", "react-dom@>=16.0.0", "react-dom@>=16.11.0", "react-dom@>=16.8", "react-dom@>=16.8.0", "react-dom@>=16.9.0":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
   "resolved" "https://registry.npmmirror.com/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"

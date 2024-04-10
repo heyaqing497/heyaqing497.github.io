@@ -72,7 +72,7 @@ const Ball: FC<{ title: string }> = () => {
           } else {
             var z = Math.sin(Math.PI / 180 * angle) * -r;
           }
-          console.log(z);
+          // console.log(z);
           angle += addAng;
 
           var arr1 = getMaxY(m, z, bufR);
@@ -116,14 +116,14 @@ const Ball: FC<{ title: string }> = () => {
       var data = drawQiu02(0, 0, 0, 0.5, 180);
       var positionIndex = gl.getAttribLocation(paogram, "position");
       var matIndex = gl.getUniformLocation(paogram, "mat");
-      console.log(gl.getShaderInfoLog(vertex));
+      // console.log(gl.getShaderInfoLog(vertex));
       var mM = [
         1, 0, 0, 0,
         0, 1, 0, 0,
         0, 0, 1, 0,
         0, 0, 0, 1
       ];
-      console.log(gl.getShaderInfoLog(fragment));
+      // console.log(gl.getShaderInfoLog(fragment));
 
 
       global.rotateX = function (angle) {
