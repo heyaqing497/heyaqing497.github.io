@@ -34,6 +34,9 @@ TwoDLines
 DynamicBuffers
 <code src="./twgl/DynamicBuffers.tsx"></code>
 
+ZoomAround
+<code src="./twgl/ZoomAround.tsx"></code>
+
 threejs
 <code src="./threejs/RotatingCube.tsx"></code>
 

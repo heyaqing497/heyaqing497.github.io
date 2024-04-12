@@ -1,5 +1,5 @@
 /**
- * title: 原始派作品
+ * title: Primitives
  */
 import * as chroma from 'chroma-js';
 import React, { useEffect, useRef } from 'react';
