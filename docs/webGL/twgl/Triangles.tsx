@@ -15,15 +15,15 @@ const Triangle = () => {
         // 设置WebGL视图大小
         const width = gl.canvas.width;
         const height = gl.canvas.height;
-        twgl.resizeCanvasToDisplaySize(canvas);
 
-        // 创建着色器
+        // 创建顶点着色器
         const vertexShaderSource = `  
           attribute vec4 position;  
           void main() {  
             gl_Position = position;  
           }  
         `;
+        // 创建片段着色器
         const fragmentShaderSource = `  
           precision mediump float;  
           void main() {  
@@ -31,47 +31,47 @@ const Triangle = () => {
           }  
         `;
 
+        // 创建WebGL程序
         const programInfo = twgl.createProgramInfo(gl, [
           vertexShaderSource,
           fragmentShaderSource,
         ]);
 
-        // 创建顶点数据  (x,y,z)
-        const positions = new Float32Array([
-          -1,
-          -1,
-          0, // 下角
-          0.5,
-          1,
-          0, // 上角
-          1,
-          0,
-          0, // 中間右角
-        ]);
         const bufferInfo = twgl.createBufferInfoFromArrays(gl, {
-          position: positions,
+          // 頂點數據 (x,y,z)
+          position: [
+            -1,
+            -1,
+            0, // 下角
+            0.5,
+            1,
+            0, // 上角
+            1,
+            0,
+            0, // 中間右角
+          ],
+          indices: [0, 1, 2], // 索引數據
         });
 
         // 绘制场景
         function drawScene() {
           if (gl) {
+            // 调整canvas大小以适应显示尺寸
+            twgl.resizeCanvasToDisplaySize(canvas);
             gl.viewport(0, 0, width, height);
-            gl.clear(gl.COLOR_BUFFER_BIT);
 
-            gl.useProgram(programInfo.program);
+            gl.clear(gl.COLOR_BUFFER_BIT); // 清理画布
 
-            // 创建元素数组缓冲区
-            const elementArrayBuffer = gl.createBuffer();
-            gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, elementArrayBuffer);
+            gl.useProgram(programInfo.program); // 使用编译好的程序
 
-            // 将索引数据填充到缓冲区中
-            const indices = new Uint16Array([0, 1, 2]); // 例如，一个三角形的顶点索引
-            gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, indices, gl.STATIC_DRAW);
-
-            twgl.setBuffersAndAttributes(gl, programInfo, bufferInfo);
-
-            // 现在你可以安全地调用 gl.drawElements 来绘制图形
-            gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0);
+            twgl.setBuffersAndAttributes(gl, programInfo, bufferInfo); // 设置缓冲区和属性
+            //  执行绘制命令
+            gl.drawElements(
+              gl.TRIANGLES,
+              bufferInfo.numElements,
+              gl.UNSIGNED_SHORT,
+              0,
+            );
           }
         }
 
