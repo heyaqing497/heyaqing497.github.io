@@ -37,6 +37,9 @@ DynamicBuffers
 ZoomAround
 <code src="./twgl/ZoomAround.tsx"></code>
 
+Text
+<code src="./twgl/Text.tsx"></code>
+
 threejs
 <code src="./threejs/RotatingCube.tsx"></code>
 
