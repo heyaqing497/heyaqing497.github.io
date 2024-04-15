@@ -2,13 +2,13 @@
  * title: zoom-around
  */
 import * as chroma from 'chroma-js';
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import * as twgl from 'twgl.js';
+import { useAnimationFrame } from '../hooks/useAnimationFrame';
 
 const ZoomAround = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
+  const requestId = useAnimationFrame(canvasRef, () => {
     if (canvasRef.current) {
       const canvas = canvasRef.current;
       const gl = canvas.getContext('webgl');
@@ -242,15 +242,16 @@ const ZoomAround = () => {
 
             twgl.drawObjectList(gl, drawObjects);
 
-            requestAnimationFrame(drawScene);
+            requestId.current = requestAnimationFrame(drawScene);
           }
         }
 
         // 初始绘制
-        requestAnimationFrame(drawScene);
+        requestId.current = requestAnimationFrame(drawScene);
+        return drawScene;
       }
     }
-  }, []);
+  });
 
   return <canvas ref={canvasRef} width={800} height={300} />;
 };

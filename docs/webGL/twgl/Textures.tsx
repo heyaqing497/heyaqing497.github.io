@@ -2,13 +2,14 @@
  * title: Textures
  */
 import * as chroma from 'chroma-js';
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import * as twgl from 'twgl.js';
+import { useAnimationFrame } from '../hooks/useAnimationFrame';
 
 const Textures = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  useEffect(() => {
+  const requestId = useAnimationFrame(canvasRef, () => {
     if (canvasRef.current) {
       const canvas = canvasRef.current;
       const gl = canvas.getContext('webgl');
@@ -424,15 +425,16 @@ const Textures = () => {
 
             twgl.drawObjectList(gl, drawObjects); // 绘制物体
 
-            requestAnimationFrame(drawScene); // 请求下一帧动画。
+            requestId.current = requestAnimationFrame(drawScene); // 请求下一帧动画。
           }
         }
 
         // 请求首次动画帧，启动场景绘制。
-        requestAnimationFrame(drawScene);
+        requestId.current = requestAnimationFrame(drawScene);
+        return drawScene;
       }
     }
-  }, []);
+  });
 
   return <canvas ref={canvasRef} width={800} height={300} />;
 };

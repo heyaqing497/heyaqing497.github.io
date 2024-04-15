@@ -1,13 +1,14 @@
 /**
  * title: twgl cube
  */
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import * as twgl from 'twgl.js';
+import { useAnimationFrame } from '../hooks/useAnimationFrame';
 
 const TwglCube = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
-  useEffect(() => {
+  const requestId = useAnimationFrame(canvasRef, () => {
     if (canvasRef.current) {
       // 获取canvas元素、twgl实用函数和WebGL上下文
       const canvas = canvasRef.current;
@@ -203,15 +204,16 @@ const TwglCube = () => {
               0,
             );
 
-            requestAnimationFrame(drawScene); // 请求下一帧动画。
+            requestId.current = requestAnimationFrame(drawScene); // 请求下一帧动画。
           }
         }
 
         // 开始动画循环。
-        requestAnimationFrame(drawScene);
+        requestId.current = requestAnimationFrame(drawScene);
+        return drawScene;
       }
     }
-  }, []);
+  });
 
   return <canvas ref={canvasRef} width={100} height={100} />;
 };

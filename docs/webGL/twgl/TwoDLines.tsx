@@ -2,13 +2,13 @@
  * title: 2D-lines
  */
 import * as chroma from 'chroma-js';
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import * as twgl from 'twgl.js';
+import { useAnimationFrame } from '../hooks/useAnimationFrame';
 
 const TwoDLines = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  useEffect(() => {
+  const requestId = useAnimationFrame(canvasRef, () => {
     if (canvasRef.current) {
       const canvas = canvasRef.current;
       const gl = canvas.getContext('webgl');
@@ -152,15 +152,16 @@ const TwoDLines = () => {
 
             twgl.drawBufferInfo(gl, bufferInfo, gl.LINES); // 绘制缓冲区信息
 
-            requestAnimationFrame(drawScene); // 请求下一帧动画
+            requestId.current = requestAnimationFrame(drawScene); // 请求下一帧动画
           }
         }
 
         // 请求开始绘制第一帧
-        requestAnimationFrame(drawScene);
+        requestId.current = requestAnimationFrame(drawScene);
+        return drawScene;
       }
     }
-  }, []);
+  });
 
   return <canvas ref={canvasRef} width={800} height={300} />;
 };
