@@ -163,7 +163,7 @@ const TwoDLines = () => {
     }
   });
 
-  return <canvas ref={canvasRef} width={800} height={300} />;
+  return <canvas ref={canvasRef} style={{ width: '100%', height: '300px' }} />;
 };
 
 export default TwoDLines;

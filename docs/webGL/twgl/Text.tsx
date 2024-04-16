@@ -203,7 +203,7 @@ const Text = () => {
     }
   });
 
-  return <canvas ref={canvasRef} width={800} height={500} />;
+  return <canvas ref={canvasRef} style={{ width: '100%', height: '500px' }} />;
 };
 
 export default Text;

@@ -200,7 +200,10 @@ const DynamicBuffers = () => {
     </div> */}
       {hasBegin && (
         <div style={{ display: 'flex', flexDirection: 'column' }}>
-          <canvas ref={canvasRef} width={800} height={300}></canvas>
+          <canvas
+            ref={canvasRef}
+            style={{ width: '100%', height: '300px' }}
+          ></canvas>
           <div>
             <Button type="primary" onClick={() => handleStop()}>
               停止
