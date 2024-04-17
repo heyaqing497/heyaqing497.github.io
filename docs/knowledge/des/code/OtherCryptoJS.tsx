@@ -118,7 +118,7 @@ const OtherCryptoJS = () => {
           <h2>{data.title}</h2>
           {Object.entries(showValueMap).map(([key, label]) => {
             return (
-              <div key={key}>
+              <div key={key} style={{ wordBreak: 'break-all' }}>
                 {data?.[key] && (
                   <p>
                     {label}: {data[key]}
