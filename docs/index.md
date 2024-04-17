@@ -3,10 +3,12 @@ hero:
   title: library
   description: 個人博客
   actions:
-    - text: Hello
-      link: /
-    - text: World
-      link: /
+    - text: 知识点
+      link: /knowledge
+    - text: markdown
+      link: /markdown
+    - text: WEBGL
+      link: /webgl
 features:
   - title: Hello
     emoji: 💎
