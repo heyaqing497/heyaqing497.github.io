@@ -40,6 +40,9 @@ ZoomAround
 Text
 <code src="./twgl/Text.tsx"></code>
 
+Kaleidoscope
+<code src="./twgl/Kaleidoscope.tsx"></code>
+
 threejs
 <code src="./threejs/RotatingCube.tsx"></code>
 
