@@ -9,4 +9,5 @@ export default defineConfig({
   // publicPath: '/',
   exportStatic: {},
   // more config: https://d.umijs.org/config
+  favicons: ['/github-actions-demo/images/programmer.png'],
 });
